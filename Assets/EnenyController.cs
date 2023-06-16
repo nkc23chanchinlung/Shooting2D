@@ -25,8 +25,17 @@ public class EnenyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //êßå¿éûä‘ÇÇPÇOïbå∏ÇÁÇ∑
-        GameDirector.lastTime -= 10f;
-        Destroy(gameObject);
+        if (collision.CompareTag("Player") == true)
+        {
+            //êßå¿éûä‘ÇÇPÇOïbå∏ÇÁÇ∑
+            GameDirector.lastTime -= 10f;
+            Destroy(gameObject);
+        }
+        else if  (collision.CompareTag("Fire") == true)
+            {
+                
+                
+                Destroy(gameObject);
+            }
     }
 }
