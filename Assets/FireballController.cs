@@ -11,7 +11,7 @@ public class FireballController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 5f;
+        speed = 8f;
 
         player = GameObject.Find("Player").transform;
         transform.position = player.position;

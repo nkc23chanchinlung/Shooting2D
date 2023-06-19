@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemySpController : MonoBehaviour
 {
+    
     float speed;
     int Hp;
 
@@ -21,6 +22,7 @@ public class EnemySpController : MonoBehaviour
         Destroy(gameObject, 8f);
         Invoke("InstantiateBullet", 1f);
        
+        
     }
 
     // Update is called once per frame
@@ -45,7 +47,7 @@ public class EnemySpController : MonoBehaviour
         else if (collision.CompareTag("Fire") == true)
         {
             Hp --;
-            Debug.Log(Hp);
+            
             if (Hp <= 0)
             {
                 Destroy(gameObject);

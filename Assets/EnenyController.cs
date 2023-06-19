@@ -9,6 +9,7 @@ public class EnenyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         //Žõ–½4•b
        Destroy(gameObject,4f);
     }

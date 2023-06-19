@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameDirector : MonoBehaviour
 {
     public Text Kyori;//距離を表示するUI-Textオブジェクト
-    int kyorii;
+    public static int kyorii;
     public static float lastTime; //残り時間を保存する変数
 
     public Image Timegauge;
