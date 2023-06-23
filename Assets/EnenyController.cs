@@ -6,10 +6,12 @@ public class EnenyController : MonoBehaviour
 {
     Vector3 dir= Vector3.zero;//ˆÚ“®•ûŒü
     float speed = 5;//ˆÚ“®‘¬“x
+    public Animator exp;
+   
     // Start is called before the first frame update
     void Start()
     {
-        
+       
         //Žõ–½4•b
        Destroy(gameObject,4f);
     }
@@ -17,6 +19,7 @@ public class EnenyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         //ˆÚ“®•ûŒü‚ðŒˆ’è
         dir = Vector3.left;
 
@@ -35,8 +38,8 @@ public class EnenyController : MonoBehaviour
         else if  (collision.CompareTag("Fire") == true)
             {
                 
-                
                 Destroy(gameObject);
+            Instantiate(exp, transform.position,transform.rotation);
             }
     }
 }

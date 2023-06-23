@@ -31,7 +31,7 @@ public class GameDirector : MonoBehaviour
         //c‚èŠÔ‚ª‚O‚É‚È‚Á‚½‚çƒŠƒ[ƒh
         if(lastTime < 0)
         {
-            SceneManager.LoadScene("GameScene");
+            //SceneManager.LoadScene("GameScene");
         }
        
         kyorii++;

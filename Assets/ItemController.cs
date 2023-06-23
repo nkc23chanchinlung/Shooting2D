@@ -15,7 +15,7 @@ public class ItemController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameDirector.kyorii%500==0)   
+        if (GameDirector.kyorii%300==0)   
         {
             GameObject it = Instantiate(HpItem);
             float py = Random.Range(5f, -6f);

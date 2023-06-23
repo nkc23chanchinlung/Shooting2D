@@ -11,68 +11,89 @@ public class BossController : MonoBehaviour
     float speed;
     float timer;
     float but;
-    public static int Hp;
+    public static float Hp;
+    Transform player;
+    GameObject Boss;
+    float Hphill;
+    
     
     Vector3 dir = Vector3.zero;
     Renderer col;
     // Start is called before the first frame update
     void Start()
     {
-        Hp = 15;
-        col=GetComponent<Renderer>();
-        
+        Boss = GameObject.Find("EnemyBoss");
+        Hp = 0;
+        col = GetComponent<Renderer>();
+        player = GameObject.Find("Player").transform;
+        speed = 0.15f;
+
+        Hphill = 0.1f;
+
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-         but += Time.deltaTime;
-        Invoke("InstantiateBullet", 1f);
+        if (GameDirector.kyorii >= 500)
+        {
+            bossderu();
+           
+        }
+        if (Hp >= 15)
+        {
+            Hphill = 0;
+        }
 
-        speed = 0.2f;
+     
+
         
-        timer+=Time.deltaTime;
-
-        Vector3 pos = transform.position;
-        pos.x = Mathf.Clamp(pos.x, -5f, 9f);
-        pos.y = Mathf.Clamp(pos.y, -5f, 5f);
-        transform.position = pos;
-
-        if (timer >= 0.5f)
-        {
-            ugo = Random.Range(1, 7);
-            timer = 0;
-        }
-        switch(ugo)
-        {
-            
-            case 1:
-                transform.position += new Vector3(speed, 0, 0);
-                
-                break; 
-                case 2:
-                transform.position += new Vector3(-speed, 0, 0);
-                
-                break;
-                case 3:
-                transform.position += new Vector3(0, speed, 0);
-                break;
-            case 4:
-                transform.position += new Vector3(0, -speed, 0);
-                break;
-                case 5:
-                transform.position += new Vector3(speed, speed, 0);
-                break;
-                case 6:
-                transform.position += new Vector3(-speed, -speed, 0);
-                break;
-
-
-        }
-
     }
-    private void InstantiateBullet()
+
+    
+     void ugokgi() //boss“®‚«ƒpƒ^[ƒ“
+    {
+            if (timer >= 1f)
+            {
+                ugo = Random.Range(1, 8);
+                timer = 0;
+            }
+            switch (ugo)
+            {
+
+                case 1:
+                    transform.position += new Vector3(speed, 0, 0);
+
+                    break;
+                case 2:
+                    transform.position += new Vector3(-speed, 0, 0);
+
+                    break;
+                case 3:
+                    transform.position += new Vector3(0, speed, 0);
+                    break;
+                case 4:
+                    transform.position += new Vector3(0, -speed, 0);
+                    break;
+                case 5:
+                    transform.position += new Vector3(speed, speed, 0);
+                    break;
+                case 6:
+                    transform.position += new Vector3(-speed, -speed, 0);
+                    break;
+                    case 7:
+                transform.position += new Vector3(speed, 0, 0);
+                //    transform.position += player.position - transform.position;
+                break;
+            }
+
+        }
+    
+
+
+    private void InstantiateBullet()//’e
     {
         
         bullet.transform.position = transform.position;
@@ -85,29 +106,72 @@ public class BossController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //§ŒÀŽžŠÔ‚ð‚P‚O•bŒ¸‚ç‚·
-        if (collision.CompareTag("Player") == true)
+        if (GameDirector.kyorii >= 650)
         {
-            GameDirector.lastTime -= 15f;
-            
-            Hp--;
-            
-        }
-        else if (collision.CompareTag("Fire") == true)
-        {
-            Hp--;
-            col.material.color = Color.red;
-            Invoke("ResetColor", 0.5f);
-            
-            if (Hp <= 0)
+            //§ŒÀŽžŠÔ‚ð‚P‚O•bŒ¸‚ç‚·
+            if (collision.CompareTag("Player") == true)
             {
-                
-                Destroy(gameObject);
+                GameDirector.lastTime -= 15f;
+
+                Hp--;
+                    
+            }
+            else if (collision.CompareTag("Fire") == true)
+            {
+                Hp--;
+                col.material.color = Color.red;
+                Invoke("ResetColor", 0.5f);
+
+                if (Hp <= 0)
+                {
+
+                    Destroy(gameObject);
+                }
             }
         }
     }
-    void ResetColor()
+    void ResetColor()@//FƒŠƒZƒbƒg
     {
         col.material.color = Color.white;
     }
+    void bossderu()
+    {
+        
+        Hp += Hphill;
+        
+        
+        
+        Hp = (Hp > 15) ? 15 : Hp;
+      
+
+            for (int i = 0; i < 5; i++)
+            {
+               
+                transform.position += Vector3.left * speed * 0.1f;
+                
+            }
+
+
+        if (GameDirector.kyorii >= 650)
+        {
+
+
+            timer += Time.deltaTime;
+            but += Time.deltaTime;
+            Invoke("InstantiateBullet", 1f);
+
+
+
+            timer += Time.deltaTime;
+
+            Vector3 pos = transform.position;
+            pos.x = Mathf.Clamp(pos.x, -5f, 9f);
+            pos.y = Mathf.Clamp(pos.y, -4f, 4f);
+            transform.position = pos;
+            ugokgi();
+        }
+
+
     }
+}
+    
