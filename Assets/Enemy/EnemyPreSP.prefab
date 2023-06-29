@@ -266,8 +266,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1f7b475bbafa449a12816338bbaa23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: {fileID: 0}
   bullet: {fileID: 5817423467126052294, guid: dc8ea20c21d8b3242a028ba5699cc5a2, type: 3}
+  exp: {fileID: 4398472998241520056, guid: ff4f8044be331224780437a93f8b2593, type: 3}
 --- !u!222 &3970737615350445771
 CanvasRenderer:
   m_ObjectHideFlags: 0

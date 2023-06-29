@@ -10,6 +10,7 @@ public class EnemySpController : MonoBehaviour
     int Hp;
 
     public GameObject bullet;
+    public Animator exp;
     Vector3 dir = Vector3.zero;
     
     void Start()
@@ -51,6 +52,7 @@ public class EnemySpController : MonoBehaviour
             if (Hp <= 0)
             {
                 Destroy(gameObject);
+                Instantiate(exp, transform.position, transform.rotation);
             }
         }
     }
