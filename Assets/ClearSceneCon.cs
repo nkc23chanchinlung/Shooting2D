@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class TitleCom : MonoBehaviour
+public class ClearSceneCon : MonoBehaviour
 {
+    public Text sccon;
     // Start is called before the first frame update
     void Start()
     {
-        
+        sccon.text = "èÚâªéûä‘:" + GameDirector.kyorii.ToString("D6");
     }
 
     // Update is called once per frame
@@ -17,14 +18,8 @@ public class TitleCom : MonoBehaviour
     {
         
     }
-    public void loadS()
+    public void motoru()
     {
-        SceneManager.LoadScene(1);
-    }
-    public void loadA()
-    {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(0);
     }
 }
-
-

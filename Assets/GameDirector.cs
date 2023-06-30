@@ -35,7 +35,12 @@ public class GameDirector : MonoBehaviour
         }
        
         kyorii++;
-        Kyori.text = "‹——£"+kyorii.ToString("D6")+"M";
+        Kyori.text = "ŽžŠÔ:"+kyorii.ToString("D6");
         Timegauge.fillAmount = lastTime/100f;
+
+        if(Input.GetKeyDown(KeyCode.Escape)) 
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }

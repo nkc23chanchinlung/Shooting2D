@@ -487,6 +487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HpItem: {fileID: 2164506190345877900, guid: 3b901fe7c8b78414a8a6911dd4dc1cfa, type: 3}
+  SpItem: {fileID: 7727032146588911771, guid: 5f471aa2955218e43b8ea3c962e411c7, type: 3}
 --- !u!82 &881930959
 AudioSource:
   m_ObjectHideFlags: 0
@@ -886,7 +887,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u9032\u3093\u3060\u8DDD\u96E2"
+  m_Text: "\u6642\u9593\uFF1A"
 --- !u!222 &1282464655
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -955,7 +956,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 82f0f0b21061d6f4689f0ad0cbada80a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.3764706, b: 0.24705882, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1258,7 +1259,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 82f0f0b21061d6f4689f0ad0cbada80a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.3764706, b: 0.24705882, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1398,7 +1399,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 1142971470, guid: 7d35ea3e5b5a89e498882be74d3af147, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.81033874, b: 0.6556604, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

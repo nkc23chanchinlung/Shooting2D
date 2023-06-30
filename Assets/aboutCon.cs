@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class TitleCom : MonoBehaviour
+public class aboutCon : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,14 +17,9 @@ public class TitleCom : MonoBehaviour
     {
         
     }
-    public void loadS()
+
+    public void Amotoru()
     {
-        SceneManager.LoadScene(1);
-    }
-    public void loadA()
-    {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(0);
     }
 }
-
-

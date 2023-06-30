@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class BossController : MonoBehaviour
 {
     public GameObject bullet;
@@ -37,7 +38,7 @@ public class BossController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameDirector.kyorii >= 500)
+        if (GameDirector.kyorii >= 1000)
         {
             bossderu();
            
@@ -106,7 +107,7 @@ public class BossController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (GameDirector.kyorii >= 650)
+        if (GameDirector.kyorii >= 1150)
         {
             //§ŒÀŽžŠÔ‚ð‚P‚O•bŒ¸‚ç‚·
             if (collision.CompareTag("Player") == true)
@@ -126,6 +127,7 @@ public class BossController : MonoBehaviour
                 {
 
                     Destroy(gameObject);
+                    SceneManager.LoadScene(2);
                 }
             }
         }
@@ -152,7 +154,7 @@ public class BossController : MonoBehaviour
             }
 
 
-        if (GameDirector.kyorii >= 650)
+        if (GameDirector.kyorii >= 1150)
         {
 
 

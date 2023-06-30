@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
     Animator anime;
     public GameObject Fireball;
     float timer;
-    
+    static public float speed = 5;
+
     int power;
 
 
@@ -21,11 +22,15 @@ public class PlayerController : MonoBehaviour
         Application.targetFrameRate = 60;
         anime = GetComponent<Animator>();
         power = 3;
+        speed = 5;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+       
+        
         if (Input.GetKeyUp(KeyCode.C)) 
         {
             power = (power + 1) % 13;
@@ -33,7 +38,7 @@ public class PlayerController : MonoBehaviour
         }
 
         timer += Time.deltaTime;
-        float speed = 5f;
+        
         dir.x = Input.GetAxisRaw("Horizontal");
         dir.y = Input.GetAxisRaw("Vertical");
 
