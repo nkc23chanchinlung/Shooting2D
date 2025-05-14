@@ -17,9 +17,9 @@ public class HpItController : MonoBehaviour
        
         
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D c)
     {
-        if (collision.CompareTag("Player"))
+        if (c.tag=="Player")
         {
             Destroy(gameObject);
             GameDirector.lastTime += 10f;
